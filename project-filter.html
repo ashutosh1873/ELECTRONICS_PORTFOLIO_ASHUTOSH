@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#07111f">
+  <meta name="description" content="Technical case study: single-band narrow bandpass filter using an open-loop E-shaped stub-loaded triangular ring resonator, designed and simulated in Keysight ADS.">
+  <title>Triangular Ring Resonator Filter | Ashutosh</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .case-hero{padding:88px 0 62px;border-bottom:1px solid var(--line);background:radial-gradient(ellipse at 78% 20%,rgba(22,118,164,.18),transparent 45%)}
+    .case-hero h1{font-size:clamp(38px,5.2vw,66px);line-height:1.12;letter-spacing:-.06em;max-width:930px;margin:22px 0}
+    .case-hero p{color:var(--muted);max-width:760px;font-size:14px;line-height:1.9}
+    .case-meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}
+    .case-meta span{border:1px solid var(--line);border-radius:3px;padding:7px 10px;color:#a9c6d9;font:9px var(--mono);letter-spacing:.08em}
+    .case-layout{display:grid;grid-template-columns:minmax(0,1fr) 290px;gap:54px;align-items:start}
+    .case-content h2{font-size:29px;letter-spacing:-.04em;margin:0 0 16px}
+    .case-content h3{font-size:16px;margin:26px 0 10px}
+    .case-content p,.case-content li{font-size:12px;line-height:1.95;color:var(--muted)}
+    .case-content ul{padding-left:20px}
+    .case-section{padding:48px 0;border-bottom:1px solid var(--line)}
+    .case-figure{margin:24px 0 8px;padding:14px;background:#f7f9fb;border:1px solid rgba(150,180,200,.25);border-radius:6px}
+    .case-figure img{display:block;width:100%;height:auto;max-height:560px;object-fit:contain;margin:auto}
+    .case-figure figcaption{font:10px var(--mono);color:#536a7b;margin-top:12px;line-height:1.6}
+    .case-aside{position:sticky;top:100px;background:linear-gradient(145deg,rgba(16,37,58,.92),rgba(10,25,42,.92));border:1px solid var(--line);border-radius:6px;padding:23px}
+    .case-aside h3{font-size:13px;margin-bottom:15px}
+    .spec-row{padding:11px 0;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:3px}
+    .spec-row span{font-size:9px;color:var(--soft)}.spec-row strong{font-size:12px;color:#e5f5ff}
+    .result-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:22px}
+    .result-card{padding:18px;border:1px solid var(--line);border-radius:5px;background:rgba(12,31,49,.7)}
+    .result-card strong{display:block;font-size:24px;color:var(--cyan);letter-spacing:-.04em}
+    .result-card span{font-size:10px;color:var(--muted)}
+    .data-note{border:1px solid rgba(242,184,91,.35);background:rgba(130,89,27,.12);padding:17px 18px;border-radius:5px;margin:22px 0}
+    .data-note strong{display:block;color:#f2c77c;font-size:11px;margin-bottom:6px}
+    .data-note p{margin:0;color:#c6b58f;font-size:11px}
+    .case-back{display:inline-flex;margin:25px 0 0;color:var(--cyan);font-size:11px;text-decoration:none}
+    @media(max-width:800px){.case-layout{grid-template-columns:1fr;gap:25px}.case-aside{position:static;order:-1}.case-hero{padding:65px 0 45px}.case-section{padding:35px 0}}
+  </style>
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <header class="site-header">
+    <a class="brand" href="index.html#home"><span class="brand-mark">A<span>.</span></span><span>ASHUTOSH</span></a>
+    <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false"><span></span><span></span></button>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="index.html#about">About</a><a href="index.html#research">Research</a><a href="index.html#publications">Publications</a><a href="index.html#projects">Projects</a><a href="index.html#contact" class="nav-contact">Contact <span>↗</span></a>
+    </nav>
+    <a class="button button-ghost" href="index.html#projects">← Portfolio</a>
+  </header>
+  <main>
+    <section class="case-hero">
+      <div class="section-wrap">
+        <div class="eyebrow">TECHNICAL CASE STUDY / RF &amp; MICROWAVE</div>
+        <h1>Single-band narrow bandpass filter using an open-loop E-shaped stub-loaded triangular ring resonator</h1>
+        <p>A B.Tech major project investigating a compact planar microstrip resonator structure. The design was developed and optimised through electromagnetic simulation in Keysight Advanced Design System (ADS).</p>
+        <div class="case-meta"><span>B.TECH MAJOR PROJECT</span><span>2021–2025</span><span>KEYSIGHT ADS 2023</span><span>CO-AUTHOR: VISHAL VERMA</span></div>
+        <a class="case-back" href="index.html#projects">← Back to all projects</a>
+      </div>
+    </section>
+
+    <div class="section-wrap case-layout">
+      <article class="case-content">
+        <section class="case-section">
+          <div class="eyebrow">01 / PROBLEM &amp; APPROACH</div>
+          <h2>Design objective</h2>
+          <p>The project explores a narrow bandpass filter based on an open-loop triangular ring resonator loaded with E-shaped stubs. The report describes the E-shaped stubs as a way to modify the resonator's effective electrical characteristics and coupling, with the aim of shifting the resonance and improving the simulated S-parameter response.</p>
+          <p>The proposed structure is planar and is described in the report as avoiding vias and defected ground structures (DGS), keeping the design comparatively straightforward to fabricate.</p>
+          <h3>Design progression</h3>
+          <ul>
+            <li>Start with a conventional triangular ring resonator structure.</li>
+            <li>Introduce open-loop coupling and extended stubs to study the resonant response.</li>
+            <li>Develop the final planar open-loop structure with coupled E-shaped stubs.</li>
+            <li>Compare simulated frequency responses and inspect the first and higher-frequency passbands.</li>
+          </ul>
+        </section>
+
+        <section class="case-section">
+          <div class="eyebrow">02 / PROPOSED GEOMETRY</div>
+          <h2>Open-loop E-shaped stub-loaded triangular ring</h2>
+          <p>The final geometry shown in the project report places the E-shaped stub arrangement within the open-loop region of the triangular ring resonator. The report notes that the coupled stubs are intended to introduce additional capacitive effects.</p>
+          <figure class="case-figure">
+            <img src="assets/triangular-ring-layout.png" alt="Project report figure showing the planar open-loop E-shaped stub-loaded triangular ring resonator layout">
+            <figcaption>Design geometry reproduced from Figure 4.11 of the B.Tech project report.</figcaption>
+          </figure>
+        </section>
+
+        <section class="case-section">
+          <div class="eyebrow">03 / SIMULATION SETUP</div>
+          <h2>Electromagnetic simulation</h2>
+          <p>The results chapter identifies Keysight ADS 2023 as the simulation environment. The stated substrate is Rogers RT/Duroid 6010, with relative permittivity εr = 10.2, loss tangent tan δ = 0.0023 and substrate thickness of 1.27 mm.</p>
+          <p>The report discusses S-parameter analysis, particularly S11 (input reflection) and S21 (forward transmission), to evaluate the response of the proposed filter.</p>
+          <div class="result-grid">
+            <div class="result-card"><strong>3.9 GHz</strong><span>First reported passband centre</span></div>
+            <div class="result-card"><strong>12.8 GHz</strong><span>Second reported passband centre in results discussion</span></div>
+            <div class="result-card"><strong>−1.8 dB</strong><span>Reported S21 at 3.9 GHz</span></div>
+            <div class="result-card"><strong>−33.8 dB</strong><span>Reported S11 at 3.9 GHz</span></div>
+          </div>
+          <figure class="case-figure">
+            <img src="assets/filter-s-parameters.png" alt="ADS simulated S-parameter response for the E-shaped stub-loaded triangular ring resonator filter">
+            <figcaption>Simulated frequency response reproduced from Figure 4.12 of the B.Tech project report. Blue trace: S21; red trace: S11, as labelled in the source figure.</figcaption>
+          </figure>
+        </section>
+
+        <section class="case-section">
+          <div class="eyebrow">04 / RESULTS &amp; DISCUSSION</div>
+          <h2>Reported simulation observations</h2>
+          <ul>
+            <li><strong>First passband:</strong> centre frequency reported at 3.9 GHz, with S21 = −1.8 dB and S11 = −33.8 dB.</li>
+            <li><strong>Second passband:</strong> the results discussion reports a centre frequency of 12.8 GHz, S21 = −9.3 dB and S11 = −15.88 dB. The conclusion rounds/quotes this as 12.86 GHz.</li>
+            <li><strong>Second-band width:</strong> the report gives the limits as 12.54 GHz and 13.10 GHz, corresponding to 560 MHz.</li>
+            <li><strong>Design comparison:</strong> the report states that adding the E-shaped stubs shifts the first resonance towards a lower frequency and improves the first-band return-loss result relative to an earlier iteration.</li>
+          </ul>
+          <figure class="case-figure">
+            <img src="assets/filter-comparison.png" alt="Comparison of simulated frequency responses for filter design iterations">
+            <figcaption>Comparative response reproduced from Figure 4.13 of the B.Tech project report.</figcaption>
+          </figure>
+          <div class="data-note">
+            <strong>Technical data note — bandwidth value needs verification</strong>
+            <p>The report contains inconsistent first-band figures: Chapter 4 lists fH1 = 4.150 GHz, while Chapter 5 lists fH1 = 4.106 GHz. With fL1 = 3.889 GHz, the latter pair gives the stated 217 MHz bandwidth; the former pair gives 261 MHz. The report also states a 5.2% fractional bandwidth, which does not exactly align with 217 MHz at a 3.9 GHz centre frequency. These figures should be checked against the original ADS data before being treated as final.</p>
+          </div>
+        </section>
+
+        <section class="case-section">
+          <div class="eyebrow">05 / SCOPE &amp; NEXT STEPS</div>
+          <h2>Further validation</h2>
+          <p>The project report discusses physical implementation requirements, including SMA connectors and vector network analysis. However, the material reviewed here does not establish that a fabricated prototype was measured. This case study therefore describes the documented design and simulation results, not a verified hardware measurement campaign.</p>
+          <p>Suggested next steps identified in the report include physical fabrication and measurement, further insertion-loss optimisation, miniaturisation, reconfigurable operation and additional passband development.</p>
+        </section>
+      </article>
+
+      <aside class="case-aside">
+        <div class="card-kicker">PROJECT SNAPSHOT</div>
+        <h3>Design parameters</h3>
+        <div class="spec-row"><span>Simulation software</span><strong>Keysight ADS 2023</strong></div>
+        <div class="spec-row"><span>Substrate</span><strong>Rogers RT/Duroid 6010</strong></div>
+        <div class="spec-row"><span>Relative permittivity</span><strong>εr = 10.2</strong></div>
+        <div class="spec-row"><span>Loss tangent</span><strong>tan δ = 0.0023</strong></div>
+        <div class="spec-row"><span>Substrate thickness</span><strong>1.27 mm</strong></div>
+        <div class="spec-row"><span>Design topology</span><strong>Planar open-loop triangular ring with E-shaped stubs</strong></div>
+        <div class="spec-row"><span>Project authors</span><strong>Ashutosh &amp; Vishal Verma</strong></div>
+        <div class="spec-row"><span>Supervisor</span><strong>Dr. Yatindra Gaurav</strong></div>
+        <p style="font-size:9px;color:var(--soft);margin:18px 0 0">Values transcribed from the project report. See the technical data note for an internal bandwidth inconsistency.</p>
+      </aside>
+    </div>
+  </main>
+  <section class="contact-section"><div class="section-wrap contact-inner"><div class="eyebrow">DISCUSS THE WORK</div><h2>Interested in RF<br>filter design?</h2><p>For research discussions and professional enquiries, get in touch.</p><a class="contact-email" href="mailto:work.ashutosh1873@gmail.com">work.ashutosh1873@gmail.com <span>↗</span></a></div></section>
+  <footer class="footer section-wrap"><a class="brand" href="index.html#home"><span class="brand-mark">A<span>.</span></span><span>ASHUTOSH</span></a><p>Electronics Engineering · Research · Innovation</p><span>© <span id="year"></span> Ashutosh.</span><a href="#" class="back-top">Back to top ↑</a></footer>
+  <script>
+    document.getElementById('year').textContent=new Date().getFullYear();
+    const menuButton=document.querySelector('.menu-toggle');
+    const nav=document.querySelector('.nav');
+    menuButton?.addEventListener('click',()=>{const open=nav.classList.toggle('open');menuButton.setAttribute('aria-expanded',String(open));menuButton.setAttribute('aria-label',open?'Close navigation':'Open navigation');});
+    nav?.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{nav.classList.remove('open');menuButton?.setAttribute('aria-expanded','false');}));
+  </script>
+</body>
+</html>

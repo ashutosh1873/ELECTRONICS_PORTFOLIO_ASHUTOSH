@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#07111f">
+    <meta name="description"
+        content="Cafe Management System — Java Swing and MySQL desktop application case study by Ashutosh.">
+    <title>Cafe Management System | Ashutosh</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div aria-hidden="true" class="noise"></div>
+    <header class="site-header"><a class="brand" href="index.html"><span
+                class="brand-mark">A<span>.</span></span><span>ASHUTOSH</span></a><button class="menu-toggle"
+            aria-label="Open navigation" aria-expanded="false"><span></span><span></span></button>
+        <nav class="nav"><a href="index.html#about">About</a><a href="index.html#research">Research</a><a
+                href="index.html#projects">Projects</a><a class="nav-contact" href="index.html#contact">Contact ↗</a>
+        </nav>
+    </header>
+    <main>
+        <section class="section-wrap project-hero">
+            <div class="eyebrow">SOFTWARE ENGINEERING · DESKTOP APPLICATION · JAVA / MYSQL</div>
+            <h1 class="detail-title">Cafe Management<br><span class="gradient-text">System.</span></h1>
+            <p class="hero-lead">A Java Swing desktop application designed to manage cafe users, staff, product
+                categories, menu items, customer orders, billing and order records through a MySQL database.</p>
+            <div class="tag-row"><span>Java</span><span>Java
+                    Swing</span><span>NetBeans</span><span>MySQL</span><span>JDBC</span></div>
+            <p class="small-note">Project documentation based on the supplied Java source files, NetBeans form metadata,
+                actual application screenshots and MySQL DESCRIBE output.</p>
+        </section>
+        <section class="section-wrap section-space">
+            <div class="section-heading">
+                <div class="eyebrow">01 / APPLICATION OVERVIEW</div>
+                <h2>From account access<br>to <span class="gradient-text">printed bills.</span></h2>
+            </div>
+            <p class="large-copy">The application combines two broad workflows: user and staff administration, and
+                day-to-day cafe operations. Its dashboard links the catalogue, order-entry, billing and reporting
+                screens.</p>
+            <div class="image-grid">
+                <figure class="media-panel"><img src="assets/cafe/screenshots/01-welcome.png"
+                        alt="Original welcome screen">
+                    <figcaption>Original application screenshot · Welcome / front page</figcaption>
+                </figure>
+                <figure class="media-panel"><img src="assets/cafe/screenshots/05-admin-dashboard.png"
+                        alt="Original administrator dashboard">
+                    <figcaption>Original application screenshot · Administrator dashboard</figcaption>
+                </figure>
+            </div>
+            <div class="gallery-grid">
+                <figure class="media-panel"><img src="assets/cafe/screenshots/02-login.png" alt="Login screen">
+                    <figcaption>Login</figcaption>
+                </figure>
+                <figure class="media-panel"><img src="assets/cafe/screenshots/03-signup.png" alt="Sign-up screen">
+                    <figcaption>Sign up</figcaption>
+                </figure>
+                <figure class="media-panel"><img src="assets/cafe/screenshots/04-forgot-password.png"
+                        alt="Forgot password screen">
+                    <figcaption>Password recovery</figcaption>
+                </figure>
+            </div>
+        </section>
+        <section class="section-wrap section-space">
+            <div class="section-heading">
+                <div class="eyebrow">02 / MODULE-BY-MODULE BREAKDOWN</div>
+                <h2>What each module <span class="gradient-text">does.</span></h2>
+                <p class="section-subtitle">The module names and controls below are checked against the supplied Java
+                    source, NetBeans form metadata and owner-provided screenshots.</p>
+            </div>
+            <div class="module-list">
+                <article class="module-card"><span class="module-index">01</span>
+                    <div>
+                        <h3>Welcome / Front Page</h3>
+                        <p>Acts as the application's entry screen. It provides navigation to the login page and sign-up
+                            page, an exit action, a version-information action and a contact-developer action.</p>
+                        <figure class="module-screenshot"><img src="assets/cafe/screenshots/01-welcome.png"
+                                alt="Welcome screen">
+                            <figcaption>Welcome screen · owner-supplied screenshot</figcaption>
+                        </figure>
+                        <div class="tag-row"><span>Application entry</span><span>Navigation</span></div>
+                    </div>
+                </article>
+                <article class="module-card"><span class="module-index">02</span>
+                    <div>
+                        <h3>Sign Up</h3>
+                        <p>Collects a new user's name, email, mobile number, address, password, security question and
+                            security answer. The form exposes Save, Clear, Exit, Forgot Password and Login actions.</p>
+                        <figure class="module-screenshot"><img src="assets/cafe/screenshots/03-signup.png"
+                                alt="Sign-up form">
+                            <figcaption>Sign-up form · owner-supplied screenshot</figcaption>
+                        </figure>
+                        <div class="tag-row"><span>User registration</span><span>Account details</span></div>
+                    </div>
+                </article>
+                <article class="module-card"><span class="module-index">03</span>
+                    <div>
+                        <h3>Login</h3>
+                        <p>Accepts email and password for authentication and provides Login, Clear and Exit controls. It
+                            also links to sign-up and password recovery.</p>
+                        <figure class="module-screenshot"><img src="assets/cafe/screenshots/02-login.png"
+                                alt="Login form">
+                            <figcaption>Login form · owner-supplied screenshot</figcaption>
+                        </figure>
+                        <div class="tag-row"><span>Authentication</span><span>Session entry</span></div>
+                    </div>
+                </article>
+                <article class="module-card"><span class="module-index">04</span>
+                    <div>
+                        <h3>Forgot Password</h3>
+                        <p>Uses the registered email to retrieve the user's security question. The user supplies the
+                            security answer and a new password, then selects Update. The form also links back to Login
+                            and Sign Up.</p>
+                        <figure class="module-screenshot"><img src="assets/cafe/screenshots/04-forgot-password.png"
+                                alt="Forgot-password form">
+                            <figcaption>Forgot-password form · owner-supplied screenshot</figcaption>
+                        </figure>
+                        <div class="tag-row"><span>Account recovery</span><span>Security question</span></div>
+                    </div>
+                </article>
+                <article class="module-card"><span class="module-index">05</span>
+                    <div>
+                        <h3>Home Dashboard</h3>
+                        <p>Provides the main navigation after login: Place Order, View Bills &amp; Order Placed Details,
+                            Change Password, Change Security Question, Manage Category, New Product, View/Edit/Delete
+                            Product, Verify Users and Employee Data.</p>
+                        <figure class="module-screenshot"><img src="assets/cafe/screenshots/05-admin-dashboard.png"
+                                alt="Administrator dashboard">
+                            <figcaption>Administrator dashboard · owner-supplied screenshot</figcaption>
+                        </figure>
+                        <div class="tag-row"><span>Application dashboard</span><span>Module navigation</span></div>
+                    </div>
+                </article>
+                <article class="module-card"><span class="module-index">06</span>
+                    <div>
+                        <h3>Manage Category</h3>
+                        <p>Displays the existing category list and provides an Add New Category field with Save and
+                            Clear controls. The form notes that selecting a row in the category table deletes that
+                            category.</p>
+                        <figure class="module-screenshot"><img src="assets/cafe/screenshots/10-manage-category.png"
+                                alt="Manage-category screen">
+                            <figcaption>Manage-category screen · owner-supplied screenshot</figcaption>
+                        </figure>
+                        <div class="tag-row"><span>Category CRUD</span><span>Catalogue organisation</span></div>
+                    </div>
+                </article>
+                <article class="module-card"><span class="module-index">07</span>
+                    <div>
+                        <h3>New Product</h3>
+                        <p>Creates a product record using product name, category and price. The form includes Save and
+                            Clear controls and is the entry point for adding menu items to the catalogue.</p>
+                        <figure class="module-screenshot"><img src="assets/cafe/screenshots/11-new-product.png"
+                                alt="New-product form">
+                            <figcaption>New-product form · owner-supplied screenshot</figcaption>
+                        </figure>
+                        <div class="tag-row"><span>Product creation</span><span>Menu catalogue</span></div>
+                    </div>
+                </article>
+                <article class="module-card"><span class="module-index">08</span>
+                    <div>
+                        <h3>View, Edit &amp; Delete Product</h3>
+                        <p>Shows product ID, name, category and price. A user can select a product, update its details,
+                            clear the form or delete the selected product.</p>
+                        <figure class="module-screenshot"><img
+                                src="assets/cafe/screenshots/13-view-edit-delete-product.png"
+                                alt="Product maintenance screen">
+                            <figcaption>Product maintenance screen · owner-supplied screenshot</figcaption>
+                        </figure>
+                        <div class="tag-row"><span>Product CRUD</span><span>Catalogue maintenance</span></div>
+                    </div>
+                </article>
+                <article class="module-card"><span class="module-index">09</span>
+                    <div>
+                        <h3>Place Order</h3>
+                        <p>Captures customer name, mobile number, email and address. The operator chooses a category,
+                            searches products, selects a product and quantity, adds it to the cart, reviews line totals
+                            and grand total, then generates and prints the bill. The form also displays bill ID, date,
+                            time and logged-in user information.</p>
+                        <figure class="module-screenshot"><img src="assets/cafe/screenshots/06-place-order.png"
+                                alt="Order-entry and cart screen">
+                            <figcaption>Order-entry and cart screen · owner-supplied screenshot</figcaption>
+                        </figure>
+                        <div class="tag-row"><span>Customer details</span><span>Cart</span><span>Billing</span></div>
+                    </div>
+                </article>
+                <article class="module-card"><span class="module-index">10</span>
+                    <div>
+                        <h3>View Bills &amp; Order Placed Details</h3>
+                        <p>Displays bill/order records in a table. The form offers date filtering, a control to change
+                            order-by ID, and a row-click action to open a bill.</p>
+                        <figure class="module-screenshot"><img src="assets/cafe/screenshots/07-bill-history.png"
+                                alt="Bill and order history">
+                            <figcaption>Bill and order history · owner-supplied screenshot</figcaption>
+                        </figure>
+                        <div class="tag-row"><span>Order history</span><span>Date filter</span><span>Bill lookup</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="module-card"><span class="module-index">11</span>
+                    <div>
+                        <h3>Employee Information</h3>
+                        <p>Provides employee/user lookup by email, ID or name. The form includes fields for name, mobile
+                            number, address, password, security question and answer, ID and active status. It also
+                            provides Search and Clear actions.</p>
+                        <figure class="module-screenshot"><img src="assets/cafe/screenshots/12-employee-information.png"
+                                alt="Employee information lookup">
+                            <figcaption>Employee information lookup · owner-supplied screenshot</figcaption>
+                        </figure>
+                        <div class="tag-row"><span>Staff records</span><span>User lookup</span></div>
+                    </div>
+                </article>
+                <article class="module-card"><span class="module-index">12</span>
+                    <div>
+                        <h3>Verify Users</h3>
+                        <p>Lists registered users and allows the administrator to search by email. The form instructs
+                            the operator to click a row to change the user's status.</p>
+                        <figure class="module-screenshot"><img src="assets/cafe/screenshots/14-verify-users.png"
+                                alt="User verification screen">
+                            <figcaption>User verification screen · owner-supplied screenshot</figcaption>
+                        </figure>
+                        <div class="tag-row"><span>User approval</span><span>Status management</span></div>
+                    </div>
+                </article>
+                <article class="module-card"><span class="module-index">13</span>
+                    <div>
+                        <h3>Change Password</h3>
+                        <p>Allows the logged-in user to enter the old password, new password and confirmation before
+                            updating credentials.</p>
+                        <figure class="module-screenshot"><img src="assets/cafe/screenshots/08-change-password.png"
+                                alt="Change-password screen">
+                            <figcaption>Change-password screen · owner-supplied screenshot</figcaption>
+                        </figure>
+                        <div class="tag-row"><span>Account settings</span></div>
+                    </div>
+                </article>
+                <article class="module-card"><span class="module-index">14</span>
+                    <div>
+                        <h3>Change Security Question</h3>
+                        <p>Displays the old security question and collects a new question, new answer and password
+                            before updating the recovery details.</p>
+                        <figure class="module-screenshot"><img
+                                src="assets/cafe/screenshots/09-change-security-question.png"
+                                alt="Security-question screen">
+                            <figcaption>Security-question screen · owner-supplied screenshot</figcaption>
+                        </figure>
+                        <div class="tag-row"><span>Account recovery settings</span></div>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <section class="section-wrap section-space">
+            <div class="section-heading">
+                <div class="eyebrow">03 / ORDER & BILLING FLOW</div>
+                <h2>A structured <span class="gradient-text">transaction flow.</span></h2>
+            </div>
+            <figure class="media-panel"><img src="assets/cafe/screenshots/06-place-order.png"
+                    alt="Original Place Order screen showing customer fields, product selection, cart and grand total">
+                <figcaption>Original Place Order screen supplied by the project owner</figcaption>
+            </figure>
+            <div class="process-grid">
+                <div class="process-step"><b>01</b>
+                    <h3>Customer</h3>
+                    <p>Enter customer identity and contact details.</p>
+                </div>
+                <div class="process-step"><b>02</b>
+                    <h3>Catalogue</h3>
+                    <p>Select category, search product and set quantity.</p>
+                </div>
+                <div class="process-step"><b>03</b>
+                    <h3>Cart</h3>
+                    <p>Add selected items and review calculated totals.</p>
+                </div>
+                <div class="process-step"><b>04</b>
+                    <h3>Bill</h3>
+                    <p>Generate the bill and invoke the print workflow.</p>
+                </div>
+            </div>
+        </section>
+        <section class="section-wrap section-space">
+            <div class="section-heading">
+                <div class="eyebrow">04 / DATABASE DESIGN</div>
+                <h2>MySQL tables &amp;<br><span class="gradient-text">data structure.</span></h2>
+                <p class="section-subtitle">The schema below is transcribed from the MySQL DESCRIBE output screenshots
+                    and cross-checked against the supplied Java source.</p>
+            </div>
+            <figure class="media-panel"><img src="assets/cafe/mysql-schema.svg"
+                    alt="Diagram of four MySQL tables and their fields">
+                <figcaption>Visual overview of the four tables. Dashed links are conceptual only; the supplied schema
+                    does not declare foreign-key constraints.</figcaption>
+            </figure>
+            <div class="image-grid">
+                <figure class="media-panel"><img src="assets/cafe/screenshots/16-mysql-tables-list.png"
+                        alt="MySQL show tables output">
+                    <figcaption>Original MySQL terminal output · database cms and its four tables</figcaption>
+                </figure>
+                <figure class="media-panel"><img src="assets/cafe/screenshots/17-mysql-bill-schema.png"
+                        alt="MySQL DESCRIBE bill output">
+                    <figcaption>Original MySQL DESCRIBE output · bill table</figcaption>
+                </figure>
+            </div>
+            <figure class="media-panel"><img src="assets/cafe/screenshots/18-mysql-user-category-product-schema.png"
+                    alt="MySQL DESCRIBE output for user category and product">
+                <figcaption>Original MySQL DESCRIBE output · user, category and product tables</figcaption>
+            </figure>
+            <div class="db-table-grid">
+                <article class="db-card">
+                    <h3><code>user</code></h3>
+                    <p>Stores user/employee account and profile information. The DDL defines an auto-increment ID
+                        primary key and a unique email.</p>
+                    <ul>
+                        <li><b>id</b> INT · primary key · auto increment</li>
+                        <li>name VARCHAR(300)</li>
+                        <li>email VARCHAR(300) · UNIQUE</li>
+                        <li>mobileNumber VARCHAR(10)</li>
+                        <li>address VARCHAR(500)</li>
+                        <li>password VARCHAR(100)</li>
+                        <li>sQuestion VARCHAR(200)</li>
+                        <li>sAnswer VARCHAR(200)</li>
+                        <li>status VARCHAR(20)</li>
+                    </ul>
+                </article>
+                <article class="db-card">
+                    <h3><code>Category</code></h3>
+                    <p>Stores the menu/category names used to organise products.</p>
+                    <ul>
+                        <li><b>id</b> INT · primary key · auto increment</li>
+                        <li>name VARCHAR(200)</li>
+                    </ul>
+                </article>
+                <article class="db-card">
+                    <h3><code>product</code></h3>
+                    <p>Stores the cafe product catalogue. The supplied DDL stores the category label as text rather than
+                        declaring a foreign key.</p>
+                    <ul>
+                        <li><b>id</b> INT · primary key · auto increment</li>
+                        <li>name VARCHAR(200)</li>
+                        <li>category VARCHAR(200)</li>
+                        <li>price VARCHAR(200)</li>
+                    </ul>
+                </article>
+                <article class="db-card">
+                    <h3><code>bill</code></h3>
+                    <p>Stores customer and transaction summary fields shown in the supplied MySQL DESCRIBE output.</p>
+                    <ul>
+                        <li><b>id</b> INT · primary key</li>
+                        <li>name VARCHAR(200)</li>
+                        <li>mobileNumber VARCHAR(10)</li>
+                        <li>email VARCHAR(200)</li>
+                        <li>date VARCHAR(50)</li>
+                        <li>total VARCHAR(200)</li>
+                        <li>createdby VARCHAR(200)</li>
+                        <li>paidby VARCHAR(50)</li>
+                        <li>address VARCHAR(1000)</li>
+                    </ul>
+                </article>
+            </div>
+            <div class="info-panel schema-caveat">
+                <h3>Database consistency note</h3>
+                <p>The supplied MySQL DESCRIBE screenshot explicitly shows both <code>paidby</code> VARCHAR(50) and
+                    <code>address</code> VARCHAR(1000) in the <code>bill</code> table. The Java <code>BillDao</code>
+                    also reads and writes these fields. An older <code>tables.java</code> source file contains a shorter
+                    CREATE TABLE statement that omits them; the DESCRIBE output is stronger evidence of the database
+                    structure actually inspected by the project owner.</p>
+                <p>No explicit foreign-key constraints or separate order-line table appear in the recovered DDL. The
+                    Java application may represent cart line items in the bill-generation logic or in an unprovided
+                    database structure; that cannot be confirmed from the supplied files.</p>
+            </div>
+        </section>
+        <section class="section-wrap section-space">
+            <div class="section-heading">
+                <div class="eyebrow">05 / IMPLEMENTATION & REVIEW</div>
+                <h2>Technology, strengths<br>& <span class="gradient-text">engineering notes.</span></h2>
+            </div>
+            <div class="two-column-info">
+                <div class="info-panel">
+                    <h3>Technology stack</h3>
+                    <ul class="clean-list">
+                        <li><span>Java</span><small>Application logic and desktop workflow</small></li>
+                        <li><span>Java Swing</span><small>Graphical user interface</small></li>
+                        <li><span>NetBeans IDE</span><small>Form-based GUI design; .form metadata included</small></li>
+                        <li><span>MySQL</span><small>Relational data storage</small></li>
+                        <li><span>JDBC</span><small>Database connectivity (inferred from compiled Database classes and
+                                JDBC APIs)</small></li>
+                    </ul>
+                </div>
+                <div class="info-panel">
+                    <h3>What the archive demonstrates</h3>
+                    <ul class="clean-list">
+                        <li><span>Multi-screen desktop application</span><small>Separate forms for authentication,
+                                catalogue, billing and administration</small></li>
+                        <li><span>Database access layer</span><small>ConnectionProvider, DBOperations and DAO
+                                classes</small></li>
+                        <li><span>CRUD workflows</span><small>Product and category creation, retrieval, update and
+                                deletion</small></li>
+                        <li><span>Operational flow</span><small>Customer details, cart, grand total, bill generation and
+                                bill lookup</small></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="info-panel security-panel">
+                <div class="eyebrow">SOURCE REVIEW · IMPORTANT</div>
+                <h3>Items to improve in a production rebuild</h3>
+                <p>The compiled connection class contains a hard-coded database credential. The public portfolio
+                    therefore does not redistribute the original 7z archive. The recovered DAO bytecode also shows SQL
+                    strings assembled through concatenation in several operations; parameterised
+                    <code>PreparedStatement</code> queries should be used to reduce SQL-injection risk. The user table
+                    stores a password field; a production system should store salted password hashes, not plaintext
+                    credentials. The employee form includes a password field, which should not be exposed in a staff
+                    listing.</p>
+                <p>These are observations from the supplied compiled files, not claims that the application was deployed
+                    publicly or suffered a breach.</p>
+            </div>
+            <div class="small-note">Evidence: actual UI screenshots, MySQL DESCRIBE output and the supplied Java source
+                files. The source's tables.java CREATE TABLE string for bill is older/shorter than the live schema shown
+                in the screenshots; this difference is documented above.</div>
+        </section>
+        <section class="contact-section">
+            <div class="section-wrap contact-inner">
+                <div class="eyebrow">NEXT PROJECT</div>
+                <h2>Explore more<br>engineering work.</h2>
+                <p>Return to the main portfolio to explore research papers, electronics projects and technical
+                    interests.</p><a class="button button-primary" href="index.html#projects">Back to projects ↗</a>
+            </div>
+        </section>
+    </main>
+    <footer class="footer section-wrap"><a class="brand" href="index.html"><span
+                class="brand-mark">A<span>.</span></span><span>ASHUTOSH</span></a>
+        <p>Electronics Engineering · Research · Innovation</p><span>© <span id="year"></span> Ashutosh.</span><a
+            class="back-top" href="#top">Back to top ↑</a>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
